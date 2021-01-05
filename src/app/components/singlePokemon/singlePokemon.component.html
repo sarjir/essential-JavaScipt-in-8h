@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="nameOfPokemon && !isLoading">
+  <div>
+    <h1>
+      {{ nameOfPokemon }}
+    </h1>
+    <button (click)="handleFavoriteClick(nameOfPokemon)">
+      <span *ngIf="isFavorite">Remove favorite</span>
+      <span *ngIf="!isFavorite">Add favorite</span>
+    </button>
+  </div>
+  <div class="wrapper">
+    <div *ngIf="pokemonData && pokemonData.ok">
+      <img
+        alt="A small picture of the pokemon {{pokemonData.pokemon.name}}"
+        src="{{pokemonData.pokemon.sprites.front_default}}"
+      />
+      <h2>abilities</h2>
+      <span *ngFor="let ability of pokemonData.pokemon.abilities">
+        {{ability.ability.name}}
+      </span>
+    </div>
+  </div>
+</div>
