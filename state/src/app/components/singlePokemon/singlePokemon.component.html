@@ -5,10 +5,6 @@
     <h1>
       {{ nameOfPokemon }}
     </h1>
-    <button (click)="handleFavoriteClick(nameOfPokemon)">
-      <span *ngIf="isFavorite">Remove favorite</span>
-      <span *ngIf="!isFavorite">Add favorite</span>
-    </button>
   </div>
   <div class="wrapper">
     <div *ngIf="pokemonData && pokemonData.ok">
