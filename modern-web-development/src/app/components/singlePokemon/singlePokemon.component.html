@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="nameOfPokemon && !isLoading">
+  <div>
+    <h1>
+      {{ nameOfPokemon }}
+    </h1>
+    <button (click)="handleFavoriteClick(nameOfPokemon)">
+      <span *ngIf="isFavorite">Remove favorite</span>
+      <span *ngIf="!isFavorite">Add favorite</span>
+    </button>
+  </div>
+  <div class="wrapper">
+    <div *ngIf="pokemonData && pokemonData.ok">
+      <!-- Add logic for displaying a single pokémon here -->
+      <!-- The url for a single pokemon is located at the key pokemon.sprites.front_default -->
+    </div>
+  </div>
+</div>
