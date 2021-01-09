@@ -25,7 +25,7 @@ export class SinglePokemonComponent {
   async setPokemon(nameOfPokemon) {
     this.pokemonData = await this.getThisPokemon(nameOfPokemon);
   }
-  
+
   getThisPokemon(singlePokemon: String): Promise<SingePokemonResult> {
     return fetch(`https://pokeapi.co/api/v2/pokemon/${singlePokemon}/`)
       .then((res) => {
