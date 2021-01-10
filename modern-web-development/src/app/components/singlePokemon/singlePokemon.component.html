@@ -13,7 +13,11 @@
   <div class="wrapper">
     <div *ngIf="pokemonData && pokemonData.ok">
       <!-- Add logic for displaying a single pokémon here -->
-      <!-- The url for a single pokemon is located at the key pokemon.sprites.front_default -->
+      <!-- The url for a single pokemon is located at the key pokemonData.pokemon.sprites.front_default -->
+      <!-- The abilities for a single pokmeon is located at pokemonData.pokemon.abilities, 
+        and then the name is on ability.name
+      -->
+
     </div>
   </div>
 </div>
