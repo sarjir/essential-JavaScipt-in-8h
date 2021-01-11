@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { SingePokemonResult } from "./singePokemonResult.types";
+import { FavoritesService } from "../../favorites.service"
 
 @Component({
   templateUrl: "./singlePokemon.component.html",
@@ -13,7 +14,7 @@ export class SinglePokemonComponent {
   isFavorite: boolean = false;
   isLoading: boolean;
 
-  constructor() {}
+  constructor(private favoritesService: FavoritesService) {}
 
   async ngOnChanges() {
     this.isLoading = true;
@@ -27,6 +28,12 @@ export class SinglePokemonComponent {
 
   async setPokemon(nameOfPokemon) {
     this.pokemonData = await this.getThisPokemon(nameOfPokemon);
+    this.isFavorite = this.favoritesService.isFavorite(nameOfPokemon);
+  }
+
+  handleFavoriteClick(name: string) {
+    this.favoritesService.toggleFavorite(name);
+    this.isFavorite = this.favoritesService.isFavorite(this.nameOfPokemon);
   }
 
   getThisPokemon(singlePokemon: String): Promise<SingePokemonResult> {
