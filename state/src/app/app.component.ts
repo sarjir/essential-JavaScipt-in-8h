@@ -8,7 +8,7 @@ import { Pokemon } from "./pokemon.types";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit {
-  title = "Testing";
+  title = "Pokédex";
   allPokemon: Pokemon[];
   selectedPokemon: String;
   favoritesCount: Number;

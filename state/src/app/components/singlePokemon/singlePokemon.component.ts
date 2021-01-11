@@ -10,7 +10,10 @@ export class SinglePokemonComponent {
   @Input()
   nameOfPokemon: string;
   pokemonData: SingePokemonResult;
+  isFavorite: boolean = false;
   isLoading: boolean;
+
+  constructor() {}
 
   async ngOnChanges() {
     this.isLoading = true;
