@@ -7,5 +7,10 @@ type Favorite = string;
   providedIn: "root"
 })
 export class FavoritesService {
+  public toggleFavorite(singlePokemon: string): void {
+  }
 
+  public isFavorite(singlePokemon: string): boolean {
+    return false;
+  }
 }
