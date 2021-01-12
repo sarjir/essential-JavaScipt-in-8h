@@ -37,23 +37,5 @@ export class SinglePokemonComponent {
   }
 
   getThisPokemon(singlePokemon: String): Promise<SingePokemonResult> {
-    return fetch(`https://pokeapi.co/api/v2/pokemon/${singlePokemon}/`)
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        return {
-          pokemon: data,
-          ok: true
-        };
-      })
-      .catch((e) => {
-        console.log("error", e);
-
-        return {
-          pokemon: null,
-          ok: false
-        };
-      });
-  }
+    // https://pokeapi.co/api/v2/pokemon/${singlePokemon}/
 }
