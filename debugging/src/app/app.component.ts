@@ -17,8 +17,4 @@ export class AppComponent {
     "Can grow huge like a monster, hence the name",
     "The older it gets, the more fenestrations it gets"
   ];
-
-  ngOnInit() {
-    console.log("plant", this.plant);
-  }
 }
