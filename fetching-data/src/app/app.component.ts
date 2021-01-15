@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { PokemonService } from "./pokemon.service";
 import { FavoritesService } from "./favorites.service";
 import { Pokemon } from "./pokemon.types";
 
@@ -14,15 +15,20 @@ export class AppComponent implements OnInit {
   favoritesCount: Number;
 
   constructor(
-    private favoritesService: FavoritesService
+    private favoritesService: FavoritesService,
+    private pokemonService: PokemonService
   ) {}
 
   ngOnInit() {
+    this.subscribeToPokemon();
     this.subscribeToFavorites();
   }
 
   subscribeToPokemon() {
     // write code to fetch pokémon here
+    this.pokemonService.getPokémon().subscribe((data) => {
+      this.allPokemon = data.results;
+    });
   }
 
   subscribeToFavorites() {
